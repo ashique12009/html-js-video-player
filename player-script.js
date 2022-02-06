@@ -19,5 +19,8 @@ btn.onclick = function() {
 
 video.addEventListener('timeupdate', function() {
     var greenSeekersPosition = video.currentTime / video.duration;
-    greenSeekers.style.width = greenSeekersPosition * 100 + "%"
+    greenSeekers.style.width = greenSeekersPosition * 100 + "%";
+    if (video.ended) {
+        btn.className = 'play';
+    }
 })
