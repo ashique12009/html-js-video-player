@@ -1,5 +1,5 @@
 var video = document.querySelector('.video');
-var green_seekers = document.querySelector('.green-seekers');
+var greenSeekers = document.querySelector('.green-seekers');
 var btn = document.getElementById('play-pause');
 
 function togglePlayPause() {
@@ -16,3 +16,8 @@ function togglePlayPause() {
 btn.onclick = function() {
     togglePlayPause();
 }
+
+video.addEventListener('timeupdate', function() {
+    var greenSeekersPosition = video.currentTime / video.duration;
+    greenSeekers.style.width = greenSeekersPosition * 100 + "%"
+})
